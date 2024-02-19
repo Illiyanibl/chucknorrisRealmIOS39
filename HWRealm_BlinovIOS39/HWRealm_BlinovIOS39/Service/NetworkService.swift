@@ -31,14 +31,13 @@ struct NetworkService {
     weak static var delegate: AlertsDelegate?
     static func requestURL(for url: String, completion: @escaping (Result<Data, NetworkError>) -> Void){
         guard let url = URL(string: url) else {
-            delegate?.callAlert(description: "Неверный Url", title: "Ошибка")
+            delegate?.callAlert(description: "Неверный Url", title: "Внимание")
             return
         }
         let request = URLRequest(url: url)
         let task = NetworkServiceSession.shared.session.dataTask(with: request) { data, response, error in
             if let error {
                 DispatchQueue.main.async {
-                    delegate?.callAlert(description: "Ошибка подключения", title: "Ошибка")
                     completion(.failure(.custom(description: error.localizedDescription)))
                 }
             }
@@ -47,7 +46,6 @@ struct NetworkService {
             guard let data else {
                 DispatchQueue.main.async {
                     completion(.failure(.server))
-                    delegate?.callAlert(description: "Даннаые с сервера не получены", title: "Ошибка")
                 }
                 return
             }
