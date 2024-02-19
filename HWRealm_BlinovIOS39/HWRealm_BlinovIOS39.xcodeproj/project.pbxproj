@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5116E5952B7FBFB900548C72 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5116E5942B7FBFB900548C72 /* Realm */; };
+		5116E5972B7FBFB900548C72 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5116E5962B7FBFB900548C72 /* RealmSwift */; };
+		5116E59A2B7FC5FA00548C72 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5116E5992B7FC5FA00548C72 /* RealmService.swift */; };
+		5116E59D2B7FC8A600548C72 /* JokesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5116E59C2B7FC8A600548C72 /* JokesModel.swift */; };
 		516ABD5C2B7D17FF00722ED0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516ABD5B2B7D17FF00722ED0 /* AppDelegate.swift */; };
 		516ABD5E2B7D17FF00722ED0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516ABD5D2B7D17FF00722ED0 /* SceneDelegate.swift */; };
 		516ABD652B7D180100722ED0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 516ABD642B7D180100722ED0 /* Assets.xcassets */; };
@@ -21,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5116E5992B7FC5FA00548C72 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		5116E59C2B7FC8A600548C72 /* JokesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesModel.swift; sourceTree = "<group>"; };
 		516ABD582B7D17FF00722ED0 /* HWRealm_BlinovIOS39.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HWRealm_BlinovIOS39.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		516ABD5B2B7D17FF00722ED0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		516ABD5D2B7D17FF00722ED0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,12 +47,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5116E5972B7FBFB900548C72 /* RealmSwift in Frameworks */,
+				5116E5952B7FBFB900548C72 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5116E5982B7FC5B600548C72 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				516ABD6F2B7D196E00722ED0 /* Builder.swift */,
+				516ABD782B7D1FA500722ED0 /* NetworkService.swift */,
+				5116E5992B7FC5FA00548C72 /* RealmService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		5116E59B2B7FC88C00548C72 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5116E59C2B7FC8A600548C72 /* JokesModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		516ABD4F2B7D17FF00722ED0 = {
 			isa = PBXGroup;
 			children = (
@@ -66,11 +92,11 @@
 		516ABD5A2B7D17FF00722ED0 /* HWRealm_BlinovIOS39 */ = {
 			isa = PBXGroup;
 			children = (
+				5116E59B2B7FC88C00548C72 /* Model */,
+				5116E5982B7FC5B600548C72 /* Service */,
 				519590C22B7E745D00ED8157 /* ProjectExtension.swift */,
 				516ABD5D2B7D17FF00722ED0 /* SceneDelegate.swift */,
 				516ABD5B2B7D17FF00722ED0 /* AppDelegate.swift */,
-				516ABD782B7D1FA500722ED0 /* NetworkService.swift */,
-				516ABD6F2B7D196E00722ED0 /* Builder.swift */,
 				516ABD772B7D1C4E00722ED0 /* ChucknorrisView */,
 				516ABD642B7D180100722ED0 /* Assets.xcassets */,
 				516ABD662B7D180100722ED0 /* LaunchScreen.storyboard */,
@@ -106,6 +132,10 @@
 			dependencies = (
 			);
 			name = HWRealm_BlinovIOS39;
+			packageProductDependencies = (
+				5116E5942B7FBFB900548C72 /* Realm */,
+				5116E5962B7FBFB900548C72 /* RealmSwift */,
+			);
 			productName = HWRealm_BlinovIOS39;
 			productReference = 516ABD582B7D17FF00722ED0 /* HWRealm_BlinovIOS39.app */;
 			productType = "com.apple.product-type.application";
@@ -134,6 +164,9 @@
 				Base,
 			);
 			mainGroup = 516ABD4F2B7D17FF00722ED0;
+			packageReferences = (
+				5116E5932B7FBFB900548C72 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 516ABD592B7D17FF00722ED0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -161,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				516ABD722B7D1B2800722ED0 /* RandomJokesView.swift in Sources */,
+				5116E59D2B7FC8A600548C72 /* JokesModel.swift in Sources */,
 				516ABD762B7D1C3D00722ED0 /* CategoryView.swift in Sources */,
 				516ABD742B7D1BAD00722ED0 /* AllJokesView.swift in Sources */,
 				516ABD7B2B7D240300722ED0 /* RandomJokesPresenter.swift in Sources */,
@@ -169,6 +203,7 @@
 				516ABD702B7D196E00722ED0 /* Builder.swift in Sources */,
 				516ABD792B7D1FA500722ED0 /* NetworkService.swift in Sources */,
 				519590C32B7E745D00ED8157 /* ProjectExtension.swift in Sources */,
+				5116E59A2B7FC5FA00548C72 /* RealmService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +418,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5116E5932B7FBFB900548C72 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5116E5942B7FBFB900548C72 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5116E5932B7FBFB900548C72 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		5116E5962B7FBFB900548C72 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5116E5932B7FBFB900548C72 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 516ABD502B7D17FF00722ED0 /* Project object */;
 }
